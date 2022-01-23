@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace LanguegeTutor
+{
+    class Tutor
+    {
+        private Dictionary<string, string> _dic = new Dictionary<string, string>();
+        private Random _rand = new Random();
+        public void AddWord(string eng, string rus)
+        {
+            _dic.Add(eng, rus);
+        }
+
+        public bool CheckWord(string eng, string rus)
+        {
+            var answer = _dic[eng];
+            return answer.ToLower() == rus;
+        }
+
+        public string Translate(string eng)
+        {
+            if (_dic.ContainsKey(eng))
+                return _dic[eng];
+            else
+                return null;
+        }
+
+        public string GetRandomEngWord()
+        {
+            var r = _rand.Next(0, _dic.Count);
+            var keys = new List<string>(_dic.Keys);
+            return keys[r];
+        }
+    }
+}
