@@ -7,10 +7,6 @@ namespace LanguegeTutor
     {
         static void Main(string[] args)
         {
-            //WordStorage storage = new WordStorage();
-            //storage.AddWord("hello", "привет");
-            //var dic = storage.GetAllWords();
-
             var tutor = new Tutor();
             tutor.AddWord("hello", "привет");
             tutor.AddWord("dog", "собака");
